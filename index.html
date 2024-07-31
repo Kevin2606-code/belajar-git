@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMMIN - Car Rental</title>
+    <style>
+        /* h1 = Selector (yang akan di styling) 
+            color = properti
+            red = Value/nilai
+            jika ada selector yang sama, selector yang di bawah akan mengganti/menambahkan nilai yang ada di selector atas
+        */
+        .blue {
+            color: blue;
+            margin: 6px;
+        }
+
+        h1 {
+            color: red;
+            font-size: 48px;
+            font-weight: normal;
+            margin: 6px;
+        }
+
+
+
+        h2 {
+            color: darkblue;
+            font-size: 36px;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        p {
+            font-size: 26px;
+            background-color: burlywood;
+            padding: 10px;
+            margin: 6px;
+            display: inline-block;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+            border: 6px solid brown;
+            border-style: double;
+            padding: 10px;
+            margin: 6px;
+        }
+
+        /* img {
+            border: 6px solid brown;
+            border-radius: 250px;
+            border-style: double;
+            padding: 10px;
+            margin: 6px;
+        } */
+        .img-overlay {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-overlay img {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .img-overlay h2 {
+            position: absolute;
+            background-color: burlywood;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row img {
+            width: 40%;
+        }
+
+        /* 
+        flexbox : tinggal langsung pakai 
+        grid : untuk membuat area/menempatkan konten
+        */
+    </style>
+</head>
+
+<body>
+    <!-- class digunakan untuk styling (membedakan h1 dengan h1 lainnya) -->
+    <h1>TMMIN Car Rental</h1>
+    <h1 class="blue">TMMIN Car Rental</h1>
+    <h2>Introduction</h2>
+    <p>
+        <i>Car rental</i> adalah Sebuah <b>aplikasi untuk menyewa mobil</b> secara
+        online dan dapat di akses menggunakan smartphone sehingga
+        pengguna bisa melakukan pemesanan mobil <u>dimanapun dan kapanpun.</u>
+    </p>
+
+    <div class="img-overlay">
+        <img src="https://toyotacianjur.com/wp-content/uploads/2022/12/Zenix-Silver-p-1.png"
+            alt="Toyota Kijang Zenix" />
+        <h2>Toyota Zenix</h2>
+    </div>
+    <div class="row">
+        <img src="https://toyotacianjur.com/wp-content/uploads/2022/12/Zenix-Silver-p-1.png"
+            alt="Toyota Kijang Zenix" />
+        <img src="https://toyotacianjur.com/wp-content/uploads/2022/12/Zenix-Silver-p-1.png"
+            alt="Toyota Kijang Zenix" />
+        <img src="https://toyotacianjur.com/wp-content/uploads/2022/12/Zenix-Silver-p-1.png"
+            alt="Toyota Kijang Zenix" />
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- element yang ada penutupnya adalah type BLOCK
+type block adalaha menempati seluruh web
+
+h1 -  h6, p, div, section
+
+-->
+
+<!-- preview yang akan ditampilkan di taruh di head, informasi,  -->
+
+
+<!-- element yang tidak ada penutupnya adalah type INLINE 
+space hanya sebesar content
+
+a, span, b, i, u, img
+
+-->
+
+<!-- 
+
+3. Table
+4. Form
+5. Semantic
+
+-->
