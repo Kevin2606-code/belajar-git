@@ -19,9 +19,12 @@ class Binar {
             capacity,
             typeDriver,
             availableAt,
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            tahun: 2024,
+            transmision: isPositive ? 'manual' : 'otomatis'
         };
-        })
-    }
+        });
+    };
 
     static async listCars(filterer) {
         let cars;
@@ -43,5 +46,5 @@ class Binar {
         if (filterer instanceof Function) return cars.filter(filterer);
         
         return cars;
-    }
-    }
+    };
+    };

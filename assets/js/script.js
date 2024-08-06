@@ -1,4 +1,4 @@
-'use strict';
+
 // DOM (Suatu object yang namanya document isinya adalah keseluruhan web server yang bisa akses elemen html dan css)
 // bisa buat hitung lebar layar, ukuran content
 
@@ -8,6 +8,8 @@ const tanggal = document.getElementById('tanggal');
 const waktu = document.getElementById('waktu');
 const jumlahPenumpang = document.getElementById('jumlahPenumpang');
 const cari = document.getElementById('cari');
+const srcResult = document.getElementById('srcResult');
+
 
 const inputData = {
     tipedriver: '',
@@ -27,10 +29,12 @@ cari.addEventListener('click', function(e) {
     inputData.waktu = jam.value
     inputData.jumlahPenumpang = jumlahPenumpang.value
 
+
     getData(inputData);
 });
 
-// fetch = bisa untuk mengirim, mengambil mengupdate
+// fetch = bisa untuk mengirim, mengambil, mengupdate
+
 
 async function getData(inputData) {
     let itemHtml;
@@ -40,17 +44,29 @@ async function getData(inputData) {
 
     const filterData = data.filter(function(e){
         return e.typeDriver === inputData.tipedriver
-    })
+    });
+    console.log(filterData);
 
-    filterData.forEach(element => {
-        itemHtml += `
-        <div class="col-4">
-            <img class="img-fluid "src="${element.image}" />
-            <h3>${element.name}</h3>
-        </div>`
+    document.getElementById('srcResult').innerHTML = itemHtml
+    srcResult.innerHTML = '';
+    filterData.forEach(item => {
+        srcResult.innerHTML += `<div class="col-12 col-md-6 col-lg-4 mb-3 mt-3">
+        <div class="card" >
+            <img src="${item.image}" style="width: 100%; height: 200px;" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <h2>Rp. ${new Intl.NumberFormat('id-ID').format(item.price)} / hari</h2>
+                <p> ${item.description}</p>
+                <p><img src="assets/img/fi_users.svg"/> ${item.capacity} orang</p>
+                <p><img src="assets/img/fi_settings.svg"/> ${item.transmision}</p>
+                <p><img src="assets/img/fi_calendar.svg"/> ${item.tahun}</p>
+                <a href="#" class="btn btn-success" style="width: 100%">Pilih Mobil</a>
+            </div>
+        </div>
+    </div>`
+    });
 
-    })
+};
 
-    document.getElementById('searchresult').innerHTML = itemHtml
 
-}
+
